@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @messages = Message.where(post_id: @post)
   end
 
   def new
