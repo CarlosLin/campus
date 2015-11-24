@@ -7,14 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-<% if notice %>
-  <p class="notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert"><%= alert %></p>
-<% end %>
-<%= yield %>
-
+<div class="container-fluid">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">
+          Campus
+        </a>
+      </div>
+      <p class="navbar-text navbar-right">
+        <% if user_signed_in? %>
+          <%= current_user.name %> |
+          <%= link_to "LogOut",destroy_user_session_path,method: :delete %>
+        <% else %>
+          <%= link_to "SignIn", new_user_session_path %> |
+          <%= link_to "SignUp", new_user_registration_path %>
+        <% end %>
+      </p>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1" style="margin-top:50px">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -1,5 +1,19 @@
 <h1><%= @post.name %></h1>
+<h5>Post by <%= @post.user.name %></h5>
 <h3><%= @post.content %></h3>
 
 <%= link_to "Home", root_path, class: "btn btn-default" %>
 <%= link_to "Edit", edit_post_path(@post), class: "btn btn-default" %>
+
+<hr>
+
+<h2><%= pluralize(@post.messages.count, "Reply")%></h2>
+<% @messages.each do | message| %>
+  <div class="message">
+    <p class="username"><%= message.user.name %></p>
+    <p class="time"><%= time_ago_in_words(message.created_at) %></p>
+    <p class="msg"><%= message.msg %></p>
+  </div>
+<% end %>
+
+<%= render 'messages/form' %>
