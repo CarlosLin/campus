@@ -1,5 +1,13 @@
-<h1>index</h1>
 <%= link_to 'New', new_post_path, class: 'btn btn-default' %>
-<% @posts.each do |post| %>
-  <h1><%= link_to post.name, post %></h1>
-<% end %>
+<div class="row"  id="posts">
+  <div class="title">
+    附近熱門
+    <a href="\" class="more">and more..</a>
+  </div>
+  <% @posts.each do |post| %>
+  <div class="col-xs-6 col-md-2 box">
+    <%= link_to (image_tag post.avatar.url(:medium)), post,class: 'thumbnail' %>
+    <h3><%= link_to post.name, post %></h3>
+  </div>
+  <% end %>
+</div>
