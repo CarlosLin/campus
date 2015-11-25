@@ -26,17 +26,23 @@
       </p>
     </div>
   </nav>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-1" style="margin-top:50px">
+</div>
+<% if current_page?(root_url) %>
+  <div class="jumbotron">
+    <h1>What ever you want in Campus Guider</h1>
+  </div>
+<% end %>
     <% if notice %>
       <p class="notice"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert"><%= alert %></p>
     <% end %>
+  <div class="row">
+    <div class="col-md-9 col-md-offset-2" style="margin-top:50px">
       <%= yield %>
     </div>
   </div>
-</div>
+
 </body>
 </html>
