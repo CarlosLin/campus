@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  acts_as_punchable
   has_many :messages
   belongs_to :user
   has_attached_file :avatar, styles: { medium: "300x300", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

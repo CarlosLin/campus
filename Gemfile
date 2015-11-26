@@ -28,7 +28,7 @@ gem 'will_paginate'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'awesome_rails_console'
-
+gem 'punching_bag'
 group :development, :test do
   gem 'byebug'
 end

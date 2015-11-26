@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   def create
     @post = Post.find(params[:post_id])
     @message = Message.create(params[:message].permit(:msg))
