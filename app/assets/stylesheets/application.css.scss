@@ -52,7 +52,9 @@
   position: absolute;
   overflow: hidden;
   top: 0;
-  left: 0; }
+  left: 0;
+  cursor: pointer;
+}
   .overlay-fade-in p {
     letter-spacing: 0.15em;
     color: #f4f4f4;
