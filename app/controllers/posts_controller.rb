@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post.punch(request)
     @messages = Message.where(post_id: @post)
   end
 

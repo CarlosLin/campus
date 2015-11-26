@@ -3,6 +3,7 @@
 <head>
   <title>Campus</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -32,14 +33,14 @@
     <h1>What ever you want in Campus Guider</h1>
   </div>
 <% end %>
+  <div class="row">
+    <div class="col-md-9 col-md-offset-2" style="margin-top:60px">
     <% if notice %>
       <p class="notice"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert"><%= alert %></p>
     <% end %>
-  <div class="row">
-    <div class="col-md-9 col-md-offset-2" style="margin-top:50px">
       <%= yield %>
     </div>
   </div>
