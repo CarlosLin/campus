@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126055155) do
+ActiveRecord::Schema.define(version: 20151128132124) do
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "favoritable_id",   limit: 4
+    t.string   "favoritable_type", limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "user_id",          limit: 4
+  end
+
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.string   "msg",        limit: 255
@@ -63,5 +73,6 @@ ActiveRecord::Schema.define(version: 20151126055155) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "favorites", "users"
   add_foreign_key "posts", "users"
 end

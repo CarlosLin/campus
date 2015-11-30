@@ -29,6 +29,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'awesome_rails_console'
 gem 'punching_bag'
+gem 'acts-as-taggable-on', '~> 3.4'
 group :development, :test do
   gem 'byebug'
 end

@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
   has_many :messages
   has_many :posts
+  has_many :favorites, inverse_of: :user
 end
