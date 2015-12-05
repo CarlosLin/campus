@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
   has_many :messages
   has_many :posts
+  has_many :favorites, inverse_of: :user
   has_many :schools
   validates_numericality_of :school_id, :only_integer => true
 end
