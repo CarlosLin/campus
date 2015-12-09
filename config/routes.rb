@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts do
     resources :messages, only: [:create]
-    resources :favorites, only: [:create]
+    resources :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:show]
   get '/info' => 'users#info', :as => "user_infos"
