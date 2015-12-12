@@ -3,10 +3,12 @@
 <h5>Post by <%= @post.user.name %></h5>
 <h3><%= @post.content %></h3>
 <%= link_to "Home", root_path, class: "btn btn-default" %>
-<% if current_user.favorites.posts.pluck(:favoritable_id).include?(@post.id) %>
-  <%= link_to "已追蹤", post_favorites_path(@post), method: :post,class: "btn btn-success" %>
-<% else %>
-  <%= link_to "追蹤", post_favorites_path(@post), method: :post,class: "btn btn-default" %>
+<% if user_signed_in? %>
+  <% if current_user.favorites.posts.pluck(:favoritable_id).include?(@post.id) %>
+    <%= link_to "已追蹤", post_favorite_path(@post, @post_favorite), method: :delete,class: "btn btn-success" %>
+  <% else %>
+    <%= link_to "追蹤", post_favorites_path(@post), method: :post,class: "btn btn-default" %>
+  <% end %>
 <% end %>
 <% if @post.user == current_user  %>
   <%= link_to "Edit", edit_post_path(@post), class: "btn btn-default" %>

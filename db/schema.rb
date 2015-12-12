@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207121617) do
+ActiveRecord::Schema.define(version: 20151210063157) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "favoritable_id",   limit: 4
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20151207121617) do
     t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size",    limit: 4
     t.datetime "avatar_updated_at"
+    t.integer  "type_id",             limit: 4
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
@@ -62,6 +63,12 @@ ActiveRecord::Schema.define(version: 20151207121617) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "address",    limit: 255, null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "type_name",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

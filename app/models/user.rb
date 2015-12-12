@@ -7,6 +7,5 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :favorites, inverse_of: :user
   has_many :schools
-  validates :schools ,presence: true
   validates_numericality_of :school_id, :only_integer => true
 end

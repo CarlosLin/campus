@@ -7,12 +7,11 @@
       <td>Type</td>
       <td></td>
     </tr>
-    <% current_user.favorites.order('favoritable_type, favoritable_id').each do |t| %>
+    <% current_user.favorites.order('favoritable_type, favoritable_id').each_with_index do |t, idx| %>
       <tr>
-        <td><%= t.id %></td>
-        <td><%= t.favoritable.name %></td>
+        <td><%= (idx+1) %></td>
+        <td><%= link_to t.favoritable.name, t.favoritable %></td>
         <td><%= t.favoritable_type %></td>
-        <td><%= link_to "Link",t.favoritable, class: 'btn btn-default' %></td>
       </tr>
     <% end %>
   </table>
