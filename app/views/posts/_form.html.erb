@@ -1,7 +1,7 @@
-<%= simple_form_for @post, html: { multipart: true } do |f| %>
+<%= simple_form_for @post do |f| %>
   <%= f.input :avatar %>
   <%= f.input :name, label: 'Post Title', :input_html => {class: 'form-control'} %>
-  <%= f.input :content, placeholder: 'content', :as => :text, :input_html => {class: 'form-control', :rows => 3}%>
+  <%= f.input :content, as: :bootsy, editor_options: { image: false }%>
   <%= f.button :submit, class: 'btn btn-default' %>
   <%= link_to "Cancel", :back, class: 'btn btn-default' %>
 <% end %>

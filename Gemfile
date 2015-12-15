@@ -25,11 +25,12 @@ gem 'devise'
 gem 'cancancan'
 gem 'paperclip'
 gem 'will_paginate'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 gem 'awesome_rails_console'
 gem 'punching_bag'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'bootsy'
 group :development, :test do
   gem 'byebug'
 end

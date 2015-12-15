@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  include Bootsy::Container
   acts_as_punchable
   has_many :favorites, :as => :favoritable
   has_many :messages, :inverse_of => :post
