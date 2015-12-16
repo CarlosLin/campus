@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215061327) do
+ActiveRecord::Schema.define(version: 20151216142145) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.integer  "bootsy_resource_id",   limit: 4
@@ -98,9 +98,13 @@ ActiveRecord::Schema.define(version: 20151215061327) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.integer  "school_id",           limit: 4
+    t.string   "provider",            limit: 255
+    t.string   "uid",                 limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
   add_foreign_key "favorites", "users"
   add_foreign_key "posts", "users"
