@@ -32,6 +32,7 @@ gem 'punching_bag'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'bootsy'
 gem 'omniauth-facebook'
+gem 'social-share-button'
 group :development, :test do
   gem 'byebug'
 end
