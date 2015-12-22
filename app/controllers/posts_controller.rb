@@ -1,13 +1,20 @@
+require 'uri'
 class PostsController < ApplicationController
+  layout 'post'
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  authorize_resource
   def index
+    @posts = Post.all
+  end
+
+  def index_all
     @posts = Post.all
   end
 
   def show
     if user_signed_in?
-      @post_favorite =  current_user.favorites.where(:favoritable_id => @post.id)  
+      @post_favorite =  current_user.favorites.where(:favoritable_id => @post.id)
     end
     @post.punch(request)
     @messages = Message.where(post_id: @post)
@@ -19,6 +26,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    Post.getCoverImg(@post) if !@post.avatar_file_name?
     if @post.save
       redirect_to @post
     else
@@ -30,6 +38,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    Post.getCoverImg(@post) if !@post.avatar_file_name?
     if @post.update(post_params)
       redirect_to @post
     else

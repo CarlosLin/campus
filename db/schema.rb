@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216142145) do
+ActiveRecord::Schema.define(version: 20151221141922) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.integer  "bootsy_resource_id",   limit: 4
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20151216142145) do
     t.integer  "avatar_file_size",    limit: 4
     t.datetime "avatar_updated_at"
     t.integer  "type_id",             limit: 4
+    t.string   "cover_image",         limit: 255
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
@@ -71,6 +72,17 @@ ActiveRecord::Schema.define(version: 20151216142145) do
 
   add_index "punches", ["average_time"], name: "index_punches_on_average_time", using: :btree
   add_index "punches", ["punchable_type", "punchable_id"], name: "punchable_index", using: :btree
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.integer  "resource_id",   limit: 4
+    t.string   "resource_type", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "schools", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -105,6 +117,13 @@ ActiveRecord::Schema.define(version: 20151216142145) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
+
+  create_table "users_roles", id: false, force: :cascade do |t|
+    t.integer "user_id", limit: 4
+    t.integer "role_id", limit: 4
+  end
+
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   add_foreign_key "favorites", "users"
   add_foreign_key "posts", "users"

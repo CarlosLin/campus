@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 
-
-<%= image_tag @post.avatar.url(:medium) %>
-<h1><%= @admin_post.name %></h1>
-<h5>Post by <%= @admin_post.user.name %></h5>
-<h3><%= @admin_post.content %></h3>
-
+<div class="text">
+	<%= image_tag @post.avatar.url(:medium) if @post.avatar_file_name? %>
+	<h1><%= @post.name %></h1>
+	<h5>Post by <%= @post.user.name %></h5>
+	<h3><%= simple_format(@post.content) %></h3>
+</div>
 <%= link_to 'Edit', edit_admin_post_path(@admin_post), class: 'btn btn-default' %>
 <%= link_to 'Back', admin_posts_path, class: 'btn btn-default' %>
 <hr>

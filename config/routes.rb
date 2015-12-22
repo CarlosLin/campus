@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
     resources :favorites, only: [:create, :destroy]
   end
+  get '/index' => 'posts#index_all', :as => "index_all"
   resources :users, only: [:show]
   get '/info' => 'users#info', :as => "user_infos"
   get '/historys' => 'users#history', :as => "historys"
