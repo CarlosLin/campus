@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts
   end
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :posts do
     resources :messages, only: [:create]
     resources :favorites, only: [:create, :destroy]
