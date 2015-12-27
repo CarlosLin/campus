@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post_favorite = @post.favorites.where(:user_id=>current_user.id)
+    if user_signed_in?
+      @post_favorite =  current_user.favorites.where(:favoritable_id => @post.id)  
+    end
     @post.punch(request)
     @messages = Message.where(post_id: @post)
   end
