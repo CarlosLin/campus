@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221141922) do
+ActiveRecord::Schema.define(version: 20151227140117) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.integer  "bootsy_resource_id",   limit: 4
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20151221141922) do
     t.datetime "avatar_updated_at"
     t.integer  "type_id",             limit: 4
     t.string   "cover_image",         limit: 255
+    t.string   "ptt_post_id",         limit: 255
+    t.string   "ptt_post_link",       limit: 255
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
