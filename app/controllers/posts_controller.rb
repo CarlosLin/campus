@@ -2,8 +2,7 @@ require 'uri'
 class PostsController < ApplicationController
   layout 'post'
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  authorize_resource
+  before_action :authenticate_user!, except: [:index, :index_all, :show]
   def index
     @posts = Post.all
   end
@@ -26,7 +25,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    Post.getCoverImg(@post) if !@post.avatar_file_name?
+    Post.sample_cover_img(@post) if !@post.avatar_file_name?
     if @post.save
       redirect_to @post
     else
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    Post.getCoverImg(@post) if !@post.avatar_file_name?
+    Post.sample_cover_img(@post) if !@post.avatar_file_name?
     if @post.update(post_params)
       redirect_to @post
     else
