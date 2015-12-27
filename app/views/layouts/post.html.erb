@@ -16,9 +16,23 @@
           Campus
         </a>
       </div>
+      <p class="navbar-text navbar-right">
+        <% if user_signed_in? %>
+          <%= link_to current_user.name, user_infos_path %> |
+          <%= link_to "LogOut",destroy_user_session_path,method: :delete %>
+        <% else %>
+          <%= link_to "SignIn", new_user_session_path %> |
+          <%= link_to "SignUp", new_user_registration_path %>
+        <% end %>
+      </p>
     </div>
   </nav>
 </div>
+<% if current_page?(root_url) %>
+  <div class="jumbotron">
+    <h1>What ever you want in Campus Guider</h1>
+  </div>
+<% end %>
   <div class="row">
     <div class="col-md-9 col-md-offset-2" style="margin-top:60px">
     <% if notice %>
@@ -30,5 +44,6 @@
       <%= yield %>
     </div>
   </div>
+
 </body>
 </html>

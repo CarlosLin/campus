@@ -1,0 +1,160 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+#posts	app/assets/stylesheets/posts/post_manager.css.scss	/^#posts {$/;"	i
+.box	app/assets/stylesheets/posts/post_manager.css.scss	/^  .box {$/;"	c
+.image-overlay-content	app/assets/stylesheets/posts/post_manager.css.scss	/^.image-overlay-content {$/;"	c
+.image-wrapper	app/assets/stylesheets/posts/post_manager.css.scss	/^.image-wrapper {$/;"	c
+.jumbotron	app/assets/stylesheets/posts/post_manager.css.scss	/^.jumbotron {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^    .overlay-fade-in .button:hover {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in .button {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in .image-overlay-content {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in h2 {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in img {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in p {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in:hover .button {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in:hover .image-overlay-content {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in:hover h2, .overlay-fade-in p, .overlay-fade-in .button {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in:hover img {$/;"	c
+.overlay-fade-in	app/assets/stylesheets/posts/post_manager.css.scss	/^  .overlay-fade-in:hover p {$/;"	c
+.text	app/assets/stylesheets/posts/post_manager.css.scss	/^.text {$/;"	c
+.thumbnail	app/assets/stylesheets/posts/post_manager.css.scss	/^  .thumbnail {$/;"	c
+.title	app/assets/stylesheets/posts/post_manager.css.scss	/^.title {$/;"	c
+a	app/assets/stylesheets/posts/post_manager.css.scss	/^    a {$/;"	t
+a	app/assets/stylesheets/posts/post_manager.css.scss	/^  a {$/;"	t
+h1	app/assets/stylesheets/posts/post_manager.css.scss	/^  h1 {$/;"	t
+h3	app/assets/stylesheets/posts/post_manager.css.scss	/^  h3 {$/;"	t
+img	app/assets/stylesheets/posts/post_manager.css.scss	/^  img {$/;"	t
+#error_explanation	app/assets/stylesheets/scaffolds.scss	/^#error_explanation {$/;"	i
+#notice	app/assets/stylesheets/scaffolds.scss	/^#notice {$/;"	i
+.field_with_errors	app/assets/stylesheets/scaffolds.scss	/^.field_with_errors {$/;"	c
+a	app/assets/stylesheets/scaffolds.scss	/^a {$/;"	t
+body	app/assets/stylesheets/scaffolds.scss	/^body {$/;"	t
+div	app/assets/stylesheets/scaffolds.scss	/^div {$/;"	t
+h2	app/assets/stylesheets/scaffolds.scss	/^  h2 {$/;"	t
+p, ol, ul, td	app/assets/stylesheets/scaffolds.scss	/^p, ol, ul, td {$/;"	t
+pre	app/assets/stylesheets/scaffolds.scss	/^pre {$/;"	t
+ul li	app/assets/stylesheets/scaffolds.scss	/^  ul li {$/;"	t
+Admin	app/controllers/admin/posts_controller.rb	/^class Admin::PostsController < ApplicationController$/;"	c
+admin_post_params	app/controllers/admin/posts_controller.rb	/^    def admin_post_params$/;"	f	class:Admin
+create	app/controllers/admin/posts_controller.rb	/^  def create$/;"	f	class:Admin
+destroy	app/controllers/admin/posts_controller.rb	/^  def destroy$/;"	f	class:Admin
+edit	app/controllers/admin/posts_controller.rb	/^  def edit$/;"	f	class:Admin
+index	app/controllers/admin/posts_controller.rb	/^  def index$/;"	f	class:Admin
+new	app/controllers/admin/posts_controller.rb	/^  def new$/;"	f	class:Admin
+set_admin_post	app/controllers/admin/posts_controller.rb	/^    def set_admin_post$/;"	f	class:Admin
+show	app/controllers/admin/posts_controller.rb	/^  def show$/;"	f	class:Admin
+update	app/controllers/admin/posts_controller.rb	/^  def update$/;"	f	class:Admin
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+configure_permitted_parameters	app/controllers/application_controller.rb	/^  def configure_permitted_parameters$/;"	f	class:ApplicationController
+FavoritesController	app/controllers/favorites_controller.rb	/^class FavoritesController < ApplicationController$/;"	c
+create	app/controllers/favorites_controller.rb	/^  def create$/;"	f	class:FavoritesController
+destroy	app/controllers/favorites_controller.rb	/^  def destroy$/;"	f	class:FavoritesController
+find_post	app/controllers/favorites_controller.rb	/^    def find_post$/;"	f	class:FavoritesController
+MessagesController	app/controllers/messages_controller.rb	/^class MessagesController < ApplicationController$/;"	c
+create	app/controllers/messages_controller.rb	/^  def create$/;"	f	class:MessagesController
+PostsController	app/controllers/posts_controller.rb	/^class PostsController < ApplicationController$/;"	c
+create	app/controllers/posts_controller.rb	/^  def create$/;"	f	class:PostsController
+destroy	app/controllers/posts_controller.rb	/^  def destroy$/;"	f	class:PostsController
+edit	app/controllers/posts_controller.rb	/^  def edit$/;"	f	class:PostsController
+find_post	app/controllers/posts_controller.rb	/^    def find_post$/;"	f	class:PostsController
+index	app/controllers/posts_controller.rb	/^  def index$/;"	f	class:PostsController
+index_all	app/controllers/posts_controller.rb	/^  def index_all$/;"	f	class:PostsController
+new	app/controllers/posts_controller.rb	/^  def new$/;"	f	class:PostsController
+post_params	app/controllers/posts_controller.rb	/^    def post_params$/;"	f	class:PostsController
+show	app/controllers/posts_controller.rb	/^  def show$/;"	f	class:PostsController
+update	app/controllers/posts_controller.rb	/^  def update$/;"	f	class:PostsController
+Users	app/controllers/users/omniauth_callbacks_controller.rb	/^class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController$/;"	c
+facebook	app/controllers/users/omniauth_callbacks_controller.rb	/^  def facebook$/;"	f	class:Users
+failure	app/controllers/users/omniauth_callbacks_controller.rb	/^  def failure$/;"	f	class:Users
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+history	app/controllers/users_controller.rb	/^  def history$/;"	f	class:UsersController
+info	app/controllers/users_controller.rb	/^  def info$/;"	f	class:UsersController
+show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+Admin	app/helpers/admin/posts_helper.rb	/^module Admin::PostsHelper$/;"	m
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+FavoritesHelper	app/helpers/favorites_helper.rb	/^module FavoritesHelper$/;"	m
+MessagesHelper	app/helpers/messages_helper.rb	/^module MessagesHelper$/;"	m
+PostHelper	app/helpers/post_helper.rb	/^module PostHelper$/;"	m
+index_cover_image	app/helpers/post_helper.rb	/^  def index_cover_image(post)$/;"	f	class:PostHelper
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+Admin	app/models/admin.rb	/^module Admin$/;"	m
+table_name_prefix	app/models/admin.rb	/^  def self.table_name_prefix$/;"	F	class:Admin
+Admin	app/models/admin/post.rb	/^class Admin::Post < Post$/;"	c
+Favorite	app/models/favorite.rb	/^class Favorite < ActiveRecord::Base$/;"	c
+favoritable	app/models/favorite.rb	/^  belongs_to :favoritable, :polymorphic => true$/;"	f
+posts	app/models/favorite.rb	/^  scope :posts, -> { where(favoritable_type: 'Post')}$/;"	f
+user	app/models/favorite.rb	/^  belongs_to :user, inverse_of: :favorites$/;"	f
+Message	app/models/message.rb	/^class Message < ActiveRecord::Base$/;"	c
+post	app/models/message.rb	/^  belongs_to :post, :inverse_of => :messages$/;"	f
+user	app/models/message.rb	/^  belongs_to :user$/;"	f
+Post	app/models/post.rb	/^class Post < ActiveRecord::Base$/;"	c
+favorites	app/models/post.rb	/^  has_many :favorites, :as => :favoritable$/;"	f
+getCoverImg	app/models/post.rb	/^  def self.getCoverImg(post)$/;"	F	class:Post
+messages	app/models/post.rb	/^  has_many :messages, :inverse_of => :post$/;"	f
+user	app/models/post.rb	/^  belongs_to :user$/;"	f
+School	app/models/school.rb	/^class School < ActiveRecord::Base$/;"	c
+users	app/models/school.rb	/^  has_many :users, inverse_of: :school$/;"	f
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+favorites	app/models/user.rb	/^  has_many :favorites, inverse_of: :user$/;"	f
+from_omniauth	app/models/user.rb	/^  def self.from_omniauth(auth)$/;"	F	class:User
+messages	app/models/user.rb	/^  has_many :messages$/;"	f
+posts	app/models/user.rb	/^  has_many :posts$/;"	f
+school	app/models/user.rb	/^  belongs_to :school, inverse_of: :users$/;"	f
+APP_PATH	bin/rails	/^APP_PATH = File.expand_path('..\/..\/config\/application', __FILE__)$/;"	c
+APP_ROOT	bin/setup	/^APP_ROOT = Pathname.new File.expand_path('..\/..\/',  __FILE__)$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Campus
+Campus	config/application.rb	/^module Campus$/;"	m
+Engine	config/routes.rb	/^  mount Bootsy::Engine => '\/bootsy', as: 'bootsy'$/;"	c
+CreatePosts	db/migrate/20151123122156_create_posts.rb	/^class CreatePosts < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151123122156_create_posts.rb	/^  def change$/;"	f	class:CreatePosts
+DeviseCreateUsers	db/migrate/20151123122630_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151123122630_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+CreateMessages	db/migrate/20151123130121_create_messages.rb	/^class CreateMessages < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151123130121_create_messages.rb	/^  def change$/;"	f	class:CreateMessages
+AddUserIdToPost	db/migrate/20151123130449_add_user_id_to_post.rb	/^class AddUserIdToPost < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151123130449_add_user_id_to_post.rb	/^  def change$/;"	f	class:AddUserIdToPost
+AddAttachmentAvatarToPosts	db/migrate/20151124081411_add_attachment_avatar_to_posts.rb	/^class AddAttachmentAvatarToPosts < ActiveRecord::Migration$/;"	c
+down	db/migrate/20151124081411_add_attachment_avatar_to_posts.rb	/^  def self.down$/;"	F	class:AddAttachmentAvatarToPosts
+up	db/migrate/20151124081411_add_attachment_avatar_to_posts.rb	/^  def self.up$/;"	F	class:AddAttachmentAvatarToPosts
+CreatePunchesTable	db/migrate/20151126055155_create_punches_table.rb	/^class CreatePunchesTable < ActiveRecord::Migration$/;"	c
+down	db/migrate/20151126055155_create_punches_table.rb	/^  def self.down$/;"	F	class:CreatePunchesTable
+up	db/migrate/20151126055155_create_punches_table.rb	/^  def self.up$/;"	F	class:CreatePunchesTable
+CreateSchools	db/migrate/20151127144401_create_schools.rb	/^class CreateSchools < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151127144401_create_schools.rb	/^  def change$/;"	f	class:CreateSchools
+AddSchoolIdToUser	db/migrate/20151127144613_add_school_id_to_user.rb	/^class AddSchoolIdToUser < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151127144613_add_school_id_to_user.rb	/^  def change$/;"	f	class:AddSchoolIdToUser
+CreateFavorites	db/migrate/20151128125601_create_favorites.rb	/^class CreateFavorites < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151128125601_create_favorites.rb	/^  def change$/;"	f	class:CreateFavorites
+AddUserIdToFavorite	db/migrate/20151128132124_add_user_id_to_favorite.rb	/^class AddUserIdToFavorite < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151128132124_add_user_id_to_favorite.rb	/^  def change$/;"	f	class:AddUserIdToFavorite
+ChangeSchooIdNotNull	db/migrate/20151128161718_change_schoo_id_not_null.rb	/^class ChangeSchooIdNotNull < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151128161718_change_schoo_id_not_null.rb	/^  def change$/;"	f	class:ChangeSchooIdNotNull
+AddAddressColumnInSchool	db/migrate/20151207121617_add_address_column_in_school.rb	/^class AddAddressColumnInSchool < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151207121617_add_address_column_in_school.rb	/^  def change$/;"	f	class:AddAddressColumnInSchool
+ChangeColumnToPosts	db/migrate/20151211080740_change_column_to_posts.rb	/^class ChangeColumnToPosts < ActiveRecord::Migration$/;"	c
+down	db/migrate/20151211080740_change_column_to_posts.rb	/^  def down$/;"	f	class:ChangeColumnToPosts
+up	db/migrate/20151211080740_change_column_to_posts.rb	/^  def up$/;"	f	class:ChangeColumnToPosts
+CreateBootsyImages	db/migrate/20151215061326_create_bootsy_images.bootsy.rb	/^class CreateBootsyImages < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151215061326_create_bootsy_images.bootsy.rb	/^  def change$/;"	f	class:CreateBootsyImages
+CreateBootsyImageGalleries	db/migrate/20151215061327_create_bootsy_image_galleries.bootsy.rb	/^class CreateBootsyImageGalleries < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151215061327_create_bootsy_image_galleries.bootsy.rb	/^  def change$/;"	f	class:CreateBootsyImageGalleries
+AddOmniauthToUsers	db/migrate/20151216142145_add_omniauth_to_users.rb	/^class AddOmniauthToUsers < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151216142145_add_omniauth_to_users.rb	/^  def change$/;"	f	class:AddOmniauthToUsers
+AddCoverImageToPosts	db/migrate/20151220153243_add_cover_image_to_posts.rb	/^class AddCoverImageToPosts < ActiveRecord::Migration$/;"	c
+change	db/migrate/20151220153243_add_cover_image_to_posts.rb	/^  def change$/;"	f	class:AddCoverImageToPosts
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+Admin	test/controllers/admin/posts_controller_test.rb	/^class Admin::PostsControllerTest < ActionController::TestCase$/;"	c
+FavoritesControllerTest	test/controllers/favorites_controller_test.rb	/^class FavoritesControllerTest < ActionController::TestCase$/;"	c
+MessagesControllerTest	test/controllers/messages_controller_test.rb	/^class MessagesControllerTest < ActionController::TestCase$/;"	c
+PostControllerTest	test/controllers/post_controller_test.rb	/^class PostControllerTest < ActionController::TestCase$/;"	c
+UsersControllerTest	test/controllers/users_controller_test.rb	/^class UsersControllerTest < ActionController::TestCase$/;"	c
+Admin	test/models/admin/post_test.rb	/^class Admin::PostTest < ActiveSupport::TestCase$/;"	c
+FavoriteTest	test/models/favorite_test.rb	/^class FavoriteTest < ActiveSupport::TestCase$/;"	c
+MessageTest	test/models/message_test.rb	/^class MessageTest < ActiveSupport::TestCase$/;"	c
+PostTest	test/models/post_test.rb	/^class PostTest < ActiveSupport::TestCase$/;"	c
+SchoolTest	test/models/school_test.rb	/^class SchoolTest < ActiveSupport::TestCase$/;"	c
+UserTest	test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
