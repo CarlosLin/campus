@@ -1,6 +1,7 @@
 <div class="container">
   <h1><%= current_user.name %></h1>
   <h1><%= current_user.email %></h1>
+  <h3><%= current_user.roles[0].name %></h3>
   <h3>發文數: <%= link_to current_user.posts.count, historys_path %></h3>
   <h3>追蹤數: <%= link_to current_user.favorites.count, user_path(current_user) %></h3>
 </div>
