@@ -1,10 +1,6 @@
 <article class="text">
-  <% if @post.avatar_file_name? %>
-    <%= image_tag @post.avatar.url(:medium) %>
-  <% end %>
-  <h1><%= @post.name %></h1>
-  <h5>Post by <%= @post.user.name %></h5>
-  <h3><%= simple_format(@post.content) %></h3>
+  <%= have_avatar_file %>
+  <%= render 'detail' %>
 </article>
 <hr>
 <div class="text-info">
