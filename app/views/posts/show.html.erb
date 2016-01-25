@@ -1,17 +1,11 @@
-<article class="text">
-  <%= have_avatar_file %>
+<button id="alertB">Hi</button>
+<article id="show-info" class="text">
   <%= render 'detail' %>
 </article>
 <hr>
 <div class="text-info">
   <%= link_to "Home", root_path, class: "btn btn-default" %>
-  <% if user_signed_in? %>
-    <% if current_user.favorites.posts.pluck(:favoritable_id).include?(@post.id) %>
-      <%= link_to "已追蹤", post_favorite_path(@post, @post_favorite), method: :delete,class: "btn btn-success" %>
-    <% else %>
-      <%= link_to "追蹤", post_favorites_path(@post), method: :post,class: "btn btn-default" %>
-    <% end %>
-  <% end %>
+  <%= render 'like' %>
   <% if @post.user == current_user  %>
     <%= link_to "Edit", edit_post_path(@post), class: "btn btn-default" %>
     <%= link_to "Delete", post_path(@post), method: :delete, class: "btn btn-default" %>
@@ -28,3 +22,28 @@
 <% end %>
 
 <%= render 'messages/form' %>
+
+<script type="text/javascript">
+  // var post_id = <%= @post[:id] %>
+  // $('#favorited_button').click(function () {
+  //   var favorite_id = <%= have_favorites_id_or_not %>
+  //   $.ajax({
+  //     url: "/posts/"+post_id+"/favorites/"+favorite_id ,
+  //     type: 'DELETE',
+  //     }).done(function(){
+  //       alert(favorite_id);
+  //       $('#favorited_button').removeClass('btn-success').addClass('btn-success').html("追蹤");
+  //     });
+  //   });
+  // $('#favorites_button').click(function(){
+  //   $.post("/posts/"+post_id+"/favorites").done(function() {
+  //     $('#favorites_button').removeClass('btn-default').addClass('btn-success').html("已追蹤");
+  //   });
+  // });
+  $(document).ready(function() {
+    var post_id = <%= @post[:id] %>
+    var favorite_id = <%= @favorite_id %>
+    alertModule.initialize(favorite_id);
+    alertModule.likeOrDislike(post_id, favorite_id);
+  });
+</script>

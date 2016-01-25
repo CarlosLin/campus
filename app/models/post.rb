@@ -13,4 +13,8 @@ class Post < ActiveRecord::Base
     cover = URI.extract(post.content, ['http','https'])
     post.cover_image = cover.sample
   end
+
+  def self.like_or_not?(user, post)
+    user.favorites.posts.pluck(:favoritable_id).include?(post.id)
+  end
 end

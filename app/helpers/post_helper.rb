@@ -15,4 +15,14 @@ module PostHelper
   def have_avatar_file
   	image_tag @post.avatar.url(:medium) if @post.avatar_file_name?
   end
+
+  def have_favorites_id_or_not
+  	if user_signed_in?
+  		if @post.favorites.pluck(:user_id).include?(current_user.id)
+  			favorite_id = @post.favorites.find_by(:user_id => current_user.id).id
+  		end
+  	end
+    p "_________________FFFFFF____IIIIDDDD____#{favorite_id}"
+  	return favorite_id
+  end
 end

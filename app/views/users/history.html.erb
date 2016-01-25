@@ -1,13 +1,12 @@
 <div class="container">
   <h3>歷史紀錄</h3>
-  <table class="table table-hover">
-    <tr>
+  <table class="table table-hover table-responsive">
+    <tr class="table-row">
       <td>#</td>
       <td>PostName</td>
-      <td>Comments</td>
-      <td>Likes</td>
-      <td></td>
-      <td></td>
+      <td><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></td>
+      <td><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></td>
+      <td><span class="glyphicon glyphicon-trash" aria-hidden="true"></td>
     </tr>
     <% current_user.posts.each_with_index do |f, idx| %>
       <tr>

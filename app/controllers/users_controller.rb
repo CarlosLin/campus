@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
   
   def show
+  	@favorites = current_user.favorites.includes(:favoritable)
   end
 
   def history

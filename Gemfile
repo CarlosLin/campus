@@ -35,6 +35,9 @@ gem 'bootsy'
 gem 'omniauth-facebook'
 gem 'social-share-button'
 gem 'rolify'
+gem 'masonry-rails'
+gem 'fancybox-rails'
+gem 'bullet'
 group :development, :test do
   gem 'byebug'
 end
