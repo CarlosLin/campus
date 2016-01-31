@@ -8,18 +8,21 @@
 var alertModule = (function(){
 	if(!window.jQuery){ throw new Error("REQUIRES JQUERY")}
 	var $ = window.jQuery;
-	var _alertButton = function(id) {
+	function alertButton() {
 		$('#alertB').click(function(){
-			alert(id);
+			alert(favID);
 		});
 	}
-
-	var _likeButton = function(post_id,favorite_id) {
+	// Likebutton ( ajax )
+	function likeButton() {
 		$('#favorites_button').click(function(){
 			$.ajax({
-				url: "/posts/" + post_id + "/favorites",
+				url: "/posts/" + postID + "/favorites",
 				type:"POST",
-				success: function(){
+				dataType:"json",
+				success: function(data){
+					$('#test').html(data.id);
+					favID = data.id;
 					$('#favorites_button').hide();
 					$('#favorited_button').show();
 				}
@@ -27,7 +30,7 @@ var alertModule = (function(){
 		});
 		$('#favorited_button').click(function () {
 			$.ajax({
-				url: "/posts/" + post_id + "/favorites/" + favorite_id,
+				url: "/posts/" + postID + "/favorites/" + favID,
 				type:"POST",
 				data: {"_method":"delete"},
 				success: function(){
@@ -37,20 +40,25 @@ var alertModule = (function(){
 			});
 		});		
 	}
-	var _hideOrShow = function(post_id, favorite_id){
-		if (typeof favorite_id == "undefined"){
+	// 判斷顯示button
+	function hideOrShow(){
+		if (typeof favID == "undefined"){
 			$('#favorited_button').hide();
 		} else {
 			$('#favorites_button').hide();
 		}
-		_likeButton(post_id, favorite_id);
+		likeButton();
 	}
 	return {
-		initialize: function(e){
-			_alertButton(e);
+		// 初始該篇 postID, favID
+		initialize: function(e, f){
+			postID = e;
+			favID  = f;
+			alertButton();
 		},
-		likeOrDislike: function(post_id, favorite_id){
-			_hideOrShow(post_id, favorite_id);
+		// 定義 like button
+		likeOrDislike: function(){
+			hideOrShow();
 		}
 	};
 }());

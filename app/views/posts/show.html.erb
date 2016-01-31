@@ -24,26 +24,10 @@
 <%= render 'messages/form' %>
 
 <script type="text/javascript">
-  // var post_id = <%= @post[:id] %>
-  // $('#favorited_button').click(function () {
-  //   var favorite_id = <%= have_favorites_id_or_not %>
-  //   $.ajax({
-  //     url: "/posts/"+post_id+"/favorites/"+favorite_id ,
-  //     type: 'DELETE',
-  //     }).done(function(){
-  //       alert(favorite_id);
-  //       $('#favorited_button').removeClass('btn-success').addClass('btn-success').html("追蹤");
-  //     });
-  //   });
-  // $('#favorites_button').click(function(){
-  //   $.post("/posts/"+post_id+"/favorites").done(function() {
-  //     $('#favorites_button').removeClass('btn-default').addClass('btn-success').html("已追蹤");
-  //   });
-  // });
   $(document).ready(function() {
-    var post_id = <%= @post[:id] %>
+    var post_id     = <%= @post[:id] %>
     var favorite_id = <%= @favorite_id %>
-    alertModule.initialize(favorite_id);
-    alertModule.likeOrDislike(post_id, favorite_id);
+    alertModule.initialize(post_id, favorite_id);
+    alertModule.likeOrDislike();
   });
 </script>
