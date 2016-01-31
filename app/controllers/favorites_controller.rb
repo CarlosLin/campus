@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
   def create
     @favorite = current_user.favorites.build(favoritable: @post)
     @favorite.save
-    redirect_to @post
+    render json: @favorite
   end
   def destroy
     @favorite = current_user.favorites.find_by favoritable_id: @post

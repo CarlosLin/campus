@@ -1,7 +1,6 @@
-class Admin::PostsController < ApplicationController
+class Admin::PostsController < AdminController
   layout 'admin'
   before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
-  authorize_resource :admin
 
   # GET /admin/posts
   def index

@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
   # has_many :posts, :foreign_key => :favoritable_id, :class_name => 'Favorite', :source => 'Post', :condition => ['favoritable_type=Post']
   belongs_to :school, inverse_of: :users
   validates_numericality_of :school_id, :only_integer => true
+  before_validation :set_default_password
+  def set_default_password
+    self.password = 'password123'
+    self.password_confirmation = 'password123'
+  end
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

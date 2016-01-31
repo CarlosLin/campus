@@ -1,5 +1,5 @@
 <%= link_to 'New', new_post_path, class: 'btn btn-default' %>
-<div class="row"  id="posts">
+<div class="row posts">
   <div class="title">
     附近熱門
     <%= link_to "and more...", index_all_path, class: "more" %>
@@ -23,3 +23,6 @@
   </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  $('.posts img').css('height','130px');
+</script>

@@ -1,17 +1,11 @@
-<article class="text">
-  <%= have_avatar_file %>
+<button id="alertB">Hi</button>
+<article id="show-info" class="text">
   <%= render 'detail' %>
 </article>
 <hr>
 <div class="text-info">
   <%= link_to "Home", root_path, class: "btn btn-default" %>
-  <% if user_signed_in? %>
-    <% if current_user.favorites.posts.pluck(:favoritable_id).include?(@post.id) %>
-      <%= link_to "已追蹤", post_favorite_path(@post, @post_favorite), method: :delete,class: "btn btn-success" %>
-    <% else %>
-      <%= link_to "追蹤", post_favorites_path(@post), method: :post,class: "btn btn-default" %>
-    <% end %>
-  <% end %>
+  <%= render 'like' %>
   <% if @post.user == current_user  %>
     <%= link_to "Edit", edit_post_path(@post), class: "btn btn-default" %>
     <%= link_to "Delete", post_path(@post), method: :delete, class: "btn btn-default" %>
@@ -28,3 +22,12 @@
 <% end %>
 
 <%= render 'messages/form' %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var post_id     = <%= @post[:id] %>
+    var favorite_id = <%= @favorite_id %>
+    alertModule.initialize(post_id, favorite_id);
+    alertModule.likeOrDislike();
+  });
+</script>

@@ -8,15 +8,15 @@ class PostsController < ApplicationController
   end
 
   def index_all
-    @posts = Post.all
+    @posts = Post.paginate(:page => params[:page], :per_page => 30)
   end
 
   def show
-    if user_signed_in?
-      @post_favorite =  current_user.favorites.where(:favoritable_id => @post.id)
-    end
+    @post_favorite =  current_user.favorites.find_by(:favoritable_id => @post.id) if user_signed_in?
+    @favorite_id = @post_favorite[:id] unless @post_favorite.nil?
     @post.punch(request)
-    @messages = Message.where(post_id: @post)
+    @messages = Message.where(post_id: @post).includes(:user)
+    render :layout => 'show_post'
   end
 
   def new
