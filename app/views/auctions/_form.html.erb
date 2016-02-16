@@ -1,0 +1,16 @@
+<%= simple_form_for @auction, html: {class: 'form-horizobtal'} do |f| %>
+    <%= f.input :item_name, :label => "名稱" %>
+    <%= f.input :narrative, :as => :text, :label => "描述" %>
+    <br>
+    <label>數量</label>
+    </br>
+    <%= f.input_field :quantity, :label => "數量" %>
+    <%= f.input :price, as: :string, :label => "價格" %>
+    <div class="control-group">
+<!--       <%= f.input :photos, as: :file, :label => "上傳圖片" %>
+ -->      <div class="controls">
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </div>
+    </div>
+    <%= f.button :submit , :class => "btn btn-default"%>
+  <% end %>

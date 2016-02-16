@@ -1,0 +1,13 @@
+  <tr>
+    <dt>name</dt>
+    <dd><%= @auction.item_name %></dd>
+    <dt>price</dt>
+    <dd><%= @auction.price %></dd>
+    <dt>quantity</dt>
+    <dd><%= @auction.quantity%></dd>
+  </tr>
+  <%= link_to (auctions_path) do %>
+  <button type="button" class="btn btn-primary">
+    商品列表
+  </button>
+  <% end %>

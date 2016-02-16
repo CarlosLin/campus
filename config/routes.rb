@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/info' => 'users#info', :as => "user_infos"
   get '/historys' => 'users#history', :as => "historys"
   root 'posts#index'
+  resources :auctions
 end
