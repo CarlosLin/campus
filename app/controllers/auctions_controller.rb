@@ -14,7 +14,8 @@ class AuctionsController < ApplicationController
     @auction = current_user.auctions.build(auction_params)
     if @auction.save
       if params[:images]
-        params[:images].each {|image| @auction.photos.create(image: image)
+        params[:images].each {
+          |image| @auction.photos.create(image: image)
         }
       end
       redirect_to @auction
@@ -41,6 +42,6 @@ class AuctionsController < ApplicationController
       @auction = current_user.auctions.find(params[:id])
     end
     def auction_params
-      params.require(:auction).permit(:item_name, :narrative, :quantity, :price)
+      params.require(:auction).permit(:item_name, :narrative, :quantity, :price, :photos)
     end
 end
