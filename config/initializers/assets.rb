@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( posts/post_manager.css )
 Rails.application.config.assets.precompile += %w( users/user_manager.css )
+Rails.application.config.assets.precompile += %w( auction.css )
