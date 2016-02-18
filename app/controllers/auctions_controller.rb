@@ -4,7 +4,7 @@ class AuctionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
     # @auctions = Auction.order(:id)
-    @auctions = Auction.order(:id).includes(:user)
+    @auctions = Auction.order(:id).includes(:user).includes(:photos)
   end
   def show
   end
