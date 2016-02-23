@@ -4,7 +4,7 @@ class AuctionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
     # @auctions = Auction.order(:id)
-    @auctions = Auction.order(:id).includes(:user).includes(:photos)
+    @auctions = Auction.order(:id).includes(:user,:photos)
   end
   def show
   end
@@ -27,22 +27,28 @@ class AuctionsController < ApplicationController
   def edit
   end
   def update
-    if @auction.update(auction_params)
+    if @auction.update_attributes(auction_params)
+      if params[:images]
+        params[:images].each {
+          |image| @auction.photos.create(image: image)
+        }
+      end
       redirect_to @auction
     else
       render 'edit'
     end
   end
-  def destroy
+  def destroy 
     @auction.destroy
     redirect_to auctions_path
   end
 
   private
     def find_item
-      @auction = current_user.auctions.find(params[:id])
+      @auction = current_user.auctions.find_by(id: params[:id])
     end
     def auction_params
+      # params["auction"]["groups"] = params["auction"]["groups"].split(",")
       params.require(:auction).permit(:item_name, :narrative, :quantity, :price, :photos)
     end
 end

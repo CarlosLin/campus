@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216095356) do
+ActiveRecord::Schema.define(version: 20160222132606) do
 
   create_table "auctions", force: :cascade do |t|
     t.string   "item_name",      limit: 255,   null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160216095356) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id",        limit: 4
+    t.integer  "group_id",       limit: 4
   end
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
@@ -38,6 +39,12 @@ ActiveRecord::Schema.define(version: 20160216095356) do
     t.datetime "updated_at"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "category",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer  "favoritable_id",   limit: 4
     t.string   "favoritable_type", limit: 255
@@ -47,6 +54,15 @@ ActiveRecord::Schema.define(version: 20160216095356) do
   end
 
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.integer  "auction_id",  limit: 4
+    t.integer  "category_id", limit: 4
+    t.string   "categorized", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "name",        limit: 255
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string   "msg",        limit: 255

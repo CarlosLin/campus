@@ -11,7 +11,7 @@
   <div class="row">
     <ul class="thumbnails files">
     <% @auction.photos.each do |p| %>
-    <%= image_tag p.image.url %>
+    <%= image_tag p.image.url(:medium) %>
     <% end %>
     </ul>
   </div>
