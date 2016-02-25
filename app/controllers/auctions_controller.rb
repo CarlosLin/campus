@@ -1,6 +1,6 @@
 class AuctionsController < ApplicationController
   layout "auction"
-  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_auction, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   def index
     # @auctions = Auction.order(:id)
@@ -44,11 +44,11 @@ class AuctionsController < ApplicationController
   end
 
   private
-    def find_item
+    def find_auction
       @auction = current_user.auctions.find_by(id: params[:id])
     end
     def auction_params
       # params["auction"]["groups"] = params["auction"]["groups"].split(",")
-      params.require(:auction).permit(:item_name, :narrative, :quantity, :price, :photos)
+      params.require(:auction).permit(:item_name, :narrative, :quantity, :price, :photos  )
     end
 end

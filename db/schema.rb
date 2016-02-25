@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222132606) do
+ActiveRecord::Schema.define(version: 20160225024114) do
+
+  create_table "admin_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "auctions", force: :cascade do |t|
     t.string   "item_name",      limit: 255,   null: false
@@ -152,6 +157,7 @@ ActiveRecord::Schema.define(version: 20160222132606) do
     t.integer  "school_id",           limit: 4
     t.string   "provider",            limit: 255
     t.string   "uid",                 limit: 255
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

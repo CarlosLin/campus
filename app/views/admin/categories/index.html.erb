@@ -1,0 +1,9 @@
+<div>
+  <% @admin_categories.each do |category| %>
+  <tr>
+    <dt>name</dt>
+    <dd><%= category.category %></dd>
+    </tr>
+    <% end %>
+</div> 
+  <%= link_to 'New', new_admin_category_path, class: 'btn btn-default' %>
