@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225024114) do
-
-  create_table "admin_categories", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160227135133) do
 
   create_table "auctions", force: :cascade do |t|
     t.string   "item_name",      limit: 255,   null: false
@@ -27,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160225024114) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id",        limit: 4
-    t.integer  "group_id",       limit: 4
   end
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
@@ -45,9 +39,9 @@ ActiveRecord::Schema.define(version: 20160225024114) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "category",   limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "category_name", limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -59,15 +53,6 @@ ActiveRecord::Schema.define(version: 20160225024114) do
   end
 
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
-
-  create_table "groups", force: :cascade do |t|
-    t.integer  "auction_id",  limit: 4
-    t.integer  "category_id", limit: 4
-    t.string   "categorized", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "name",        limit: 255
-  end
 
   create_table "messages", force: :cascade do |t|
     t.string   "msg",        limit: 255

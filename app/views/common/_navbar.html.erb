@@ -5,6 +5,9 @@
           Campus
         </a>
       </div>
+      <p class="navbar-text">
+        <%= link_to "auction", auctions_path %>
+      </p>
       <p class="navbar-text navbar-right">
         <% if user_signed_in? %>
           <%= link_to current_user.name, user_infos_path %> |
