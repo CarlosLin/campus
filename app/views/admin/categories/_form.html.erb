@@ -1,6 +1,7 @@
 <div>
 <%= simple_form_for @admin_category, html: {class: 'form-horizobtal', multipart: true } do |f| %>
     <%= f.input :category_name, :label => "類別" %>
+    <%= f.collection_select(:parent_id,Category.parent_id, :id, :category_name, {:prompt => "請選擇"})%>
     <%= f.button :submit , :class => "btn btn-default"%>
     <%= link_to "Cancel", auctions_path, class: "btn btn-default" %>
 <% end %>

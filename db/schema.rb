@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227135133) do
+ActiveRecord::Schema.define(version: 20160228120017) do
 
   create_table "auctions", force: :cascade do |t|
     t.string   "item_name",      limit: 255,   null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160227135133) do
     t.string   "category_name", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "parent_id",     limit: 4,   null: false
   end
 
   create_table "favorites", force: :cascade do |t|

@@ -44,6 +44,6 @@ class Admin::CategoriesController < AdminController
     end
 
     def admin_category_params
-      params.require(:admin_category).permit(:category_name)
+      params.require(:admin_category).permit(:category_name, :parent_id)
     end
 end
