@@ -2,9 +2,12 @@ class AuctionsController < ApplicationController
   layout "auction"
   before_action :find_auction, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  respond_to :js, :html
   def index
     # @auctions = Auction.order(:id)
     @auctions = Auction.order(:id).includes(:user,:photos)
+    @cate_roots = Category.roots
+    @sub_categories = Category.sub_categories
   end
   def show
   end

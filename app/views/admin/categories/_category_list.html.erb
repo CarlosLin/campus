@@ -1,0 +1,7 @@
+<%if @admin_subcategories%>
+  <% @admin_subcategories.each do |category| %>
+    <li pid="<%=category.parent_id%>">
+      <h2><%= category.category_name %></h2>
+    </li>
+  <% end %>
+<%end%>

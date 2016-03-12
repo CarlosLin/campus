@@ -1,9 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
 <div>
-  <% @admin_categories.each do |category| %>
-  <tr>
-    <dt>name</dt>
-    <dd><%= category.category_name %></dd>
-    </tr>
-    <% end %>
-</div> 
+  <%#= collection_select(:id, :name, @admin_categories, :id, :category_name, {:prompt => "請選擇",:id=>"gg"})%>
+  <select id="gg">
+    <%@admin_categories.each do |c|%>
+      <option value="<%=c.id%>"><%=c.category_name%></option>
+    <%end%>
+  </select>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      hideAllSubCategories();
+      bindFirstTeirSelectChangeEvent();
+      forceSelect();
+    });
+
+    function hideAllSubCategories(){
+      $("li").hide();
+    }
+
+    function bindFirstTeirSelectChangeEvent(){
+      $("#gg").change(function(){
+        hideAllSubCategories();
+        $("li[pid='"+$(this).val()+"']").show();
+      });
+    }
+
+    function forceSelect(){
+      $("#gg").trigger('change');
+    }
+
+  </script>
+
+
+</div>
+<div>
+  <ul id="categories">
+    <%= render 'category_list' %>
+  </ul>     
+</div>
   <%= link_to 'New', new_admin_category_path, class: 'btn btn-default' %>
+</body>
+</html>

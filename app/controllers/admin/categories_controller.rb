@@ -1,7 +1,12 @@
 class Admin::CategoriesController < AdminController
     before_action :find_admin_category, only: [:show, :edit, :update, :destroy]
   def index
-    @admin_categories = Admin::Category.all
+    @admin_categories = Admin::Category.roots
+    @admin_subcategories = params[:id]? Admin::Category.where("parent_id = ?", params[:id]) : Admin::Category.all
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def show
