@@ -17,3 +17,6 @@
 //= require bootsy
 //= require social-share-button
 //= require_tree .
+
+$('input[type=file]').bootstrapFileInput();
+$('.file-inputs').bootstrapFileInput();

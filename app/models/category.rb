@@ -6,7 +6,9 @@ class Category < ActiveRecord::Base
   # scope :sub_categories, -> (id) { where("parent_id = ?", id) }
   # 
   def self.sub_categories
-    if Category.where("parent_id = ?", :id) 
+    if sub = Category.where.not("parent_id = -1").pluck(:category_name, :id, :parent_id)
+      return sub
+    else
       return Category.all
     end
   end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts
     resources :categories
+      get '/sub_cate' => 'categories#sub_cate', :as => "sub_cate"
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :posts do

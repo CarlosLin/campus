@@ -2,7 +2,7 @@ class Admin::CategoriesController < AdminController
     before_action :find_admin_category, only: [:show, :edit, :update, :destroy]
   def index
     @admin_categories = Admin::Category.roots
-    @admin_subcategories = params[:id]? Admin::Category.where("parent_id = ?", params[:id]) : Admin::Category.all
+    @admin_subcategories = Category.sub_categories
     respond_to do |format|
       format.js
       format.html
@@ -42,6 +42,21 @@ class Admin::CategoriesController < AdminController
     @admin_category.destroy
       redirect_to category_path 
   end
+
+  def sub_cate  
+   options = ""  
+   @category = Category.where "parent_id =?", (params[:id])
+   @category.each do |c|  
+     options << "<option value=#{c.id}>#{c.category_name}</option>"  
+   end
+   # else
+   #  @category = Category.where "parent_id =?", '7'
+   #  @category.each do |c|  
+   #    p c
+   #  end
+   # end  
+   render :text => options  
+ end
 
   private
     def find_admin_category

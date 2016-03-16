@@ -4,7 +4,6 @@
 </head>
 <body>
 <div>
-  <%#= collection_select(:id, :name, @admin_categories, :id, :category_name, {:prompt => "請選擇",:id=>"gg"})%>
   <select id="gg">
     <%@admin_categories.each do |c|%>
       <option value="<%=c.id%>"><%=c.category_name%></option>
@@ -32,7 +31,7 @@
     function forceSelect(){
       $("#gg").trigger('change');
     }
-
+    
   </script>
 
 
