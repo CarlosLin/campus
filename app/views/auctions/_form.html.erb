@@ -29,9 +29,7 @@
     </div>
     <div class="row">
     <div class="col-md-3">
-<!--     <%= select_tag name="auction[category_id]", id="auction_category_id"%>
- -->    <div class="auction">
-        </div>
+      <div class="auction"></div>
     </div>
     </div>
   </div>
@@ -44,26 +42,4 @@
     </div>
     </div>
 <% end %>
-
-    <script type="text/javascript">
-        function sub_cate(value){
-        $.ajax({
-          type: "GET",
-          url: '/sub_cate?id='+value,
-          data: 'text',
-          success: function(data){
-            $(".auction").html(data);
-          }
-        })
-      }
-      $(document).ready(function(){
-        $('#cate_root').change(function(){
-        var parent_id = $("#cate_root").val();
-        $.get("<%= auctions_path %>",
-        { parent_id: parent_id },
-        function(data){ }
-      );
-    }); 
-    }); 
-      </script>
 </div>
