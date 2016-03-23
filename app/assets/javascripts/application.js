@@ -18,5 +18,5 @@
 //= require social-share-button
 //= require_tree .
 
-$('input[type=file]').bootstrapFileInput();
-$('.file-inputs').bootstrapFileInput();
+// $('input[type=file]').bootstrapFileInput();
+// $('.file-inputs').bootstrapFileInput();

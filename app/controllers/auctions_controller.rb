@@ -14,13 +14,6 @@ class AuctionsController < ApplicationController
   def new
     @auction = Auction.new
     @cate_roots = Category.roots
-    @sub_categories = Category.sub_categories
-    # @sub_categories = Category.where(parent_id: params[:parent_id]).pluck(:category_name, :id)
-    p "-----cate-----"
-    p @cate_roots
-    p "-----sub_categories----"
-    p @sub_categories
-    respond_to :json, :html
   end
   def create
     @auction = current_user.auctions.build(auction_params)
@@ -55,21 +48,20 @@ class AuctionsController < ApplicationController
   end
 
   def sub_cate  
-   options = ""  
-   @category = Category.find_by_parent_id(params[:id])
+   input = ""  
+   @category = Category.where "parent_id =?", (params[:id])
+   p @category
    @category.each do |c|  
-     options << "<option value=#{c.id}>#{c.category_name}</option>"  
-   end  
-   render :text => options  
- end  
- 
+    input << "<input type='checkbox' name='auction[category_id]' value=#{c.id}>#{c.category_name}<br>"
+   end
+    render :text => input
+  end
 
   private
     def find_auction
       @auction = current_user.auctions.find_by(id: params[:id])
     end
     def auction_params
-      # params["auction"]["groups"] = params["auction"]["groups"].split(",")
-      params.require(:auction).permit(:item_name, :narrative, :quantity, :price, :photos  )
+      params.require(:auction).permit(:item_name, :narrative, :quantity, :price, :photos, :category_id)
     end
 end

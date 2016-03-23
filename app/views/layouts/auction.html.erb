@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%= stylesheet_link_tag 'auction' %>
+<%= stylesheet_link_tag 'auction/auction' %>
+<%= javascript_include_tag 'auction/auction' %>
+<title>Sell</title>
 </head>
   
 <body>
   <%= render "common/navbar" %>
+  <div class="main-content">
+    <%= yield %>
+  </div>
 </body>
 </html>
